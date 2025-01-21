@@ -24,7 +24,7 @@ public:
 	string getLastName() const;
 	string getEmailAddress() const;
 	int getAge() const;
-	int getDaysToComplete() const;
+	int getDaysToComplete(int index) const;
 	DegreeProgram getDegreeProgram() const;
 
 	void setStudentID(string studentID);
@@ -38,5 +38,5 @@ public:
 	void print() const;
 };
 
-#endif // !STUDENT_H
+#endif
 
