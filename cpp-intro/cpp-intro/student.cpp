@@ -1,4 +1,5 @@
 #include "student.h"
+#include "degree.h"
 #include <iostream>
 using namespace std;
 
@@ -76,11 +77,11 @@ string degreeProgramToString(DegreeProgram degreeProgram) {
 }
 
 void Student::print() const {
-	cout << "ID: " << studentID << endl;
-	cout << "First Name: " << firstName << endl;
-	cout << "Last Name: " << lastName << endl;
-	cout << "Email: " << emailAddress << endl;
-	cout << "Age: " << age << endl;
-	cout << "Days to Complete: " << daysToComplete[0] << ", " << daysToComplete[1] << ", " << daysToComplete[2] << endl;
+	cout << "ID: " << studentID << "\t";
+	cout << "First Name: " << firstName << "\t";
+	cout << "Last Name: " << lastName << "\t";
+	cout << "Email: " << emailAddress << "\t";
+	cout << "Age: " << age << "\t";
+	cout << "daysInCourse: {" << daysToComplete[0] << ", " << daysToComplete[1] << ", " << daysToComplete[2] <<"} ";
 	cout << "Degree Program: " << degreeProgramToString(degreeProgram) << endl;
 }
