@@ -2,13 +2,13 @@
 #include <iostream>
 using namespace std;
 
-Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToComplete[], DegreeProgram degreeProgram) {
-	studentID = studentID;
-	firstName = firstName;
-	lastName = lastName;
-	emailAddress = emailAddress;
-	age = age;
-	degreeProgram = degreeProgram;
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToComplete[3], DegreeProgram degreeProgram) {
+	this->studentID = studentID;
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->emailAddress = emailAddress;
+	this->age = age;
+	this->degreeProgram = degreeProgram;
 
 	for (int i = 0; i < 3; i++) {
 		this->daysToComplete[i] = daysToComplete[i];
@@ -64,12 +64,23 @@ void Student::setDegreeProgram(DegreeProgram degreeProgram) {
 }
 
 
+string degreeProgramToString(DegreeProgram degreeProgram) {
+	switch (degreeProgram) {
+	case SECURITY: 
+		return "SECURITY";
+	case NETWORK:
+		return "NETWORK";
+	case SOFTWARE:
+		return "SOFTWARE";
+	}
+}
+
 void Student::print() const {
 	cout << "ID: " << studentID << endl;
 	cout << "First Name: " << firstName << endl;
 	cout << "Last Name: " << lastName << endl;
-	cout << "Emial: " << emailAddress << endl;
+	cout << "Email: " << emailAddress << endl;
 	cout << "Age: " << age << endl;
-	cout << "Days to Complete: " << daysToComplete << endl;
-	cout << "Degree Program: " << degreeProgram << endl;
+	cout << "Days to Complete: " << daysToComplete[0] << ", " << daysToComplete[1] << ", " << daysToComplete[2] << endl;
+	cout << "Degree Program: " << degreeProgramToString(degreeProgram) << endl;
 }
